@@ -11,6 +11,9 @@ final class Config {
     public static $DB_DB_NAME = "885666";
 
     // Image upload constants
-    public static $UPLOAD_MAX_FILESIZE_BYTES = 10000000;
-    public static $UPLOAD_ALLOWED_FILE_TYPES = array("png", "jpg", "jpeg");
+    public static $UPLOAD_PATH = "../img/";
+    public static $UPLOAD_MAX_FILESIZE_BYTES = 7000000; // 7 MB
+    public static $UPLOAD_VALID_MIME_TYPES = array( "image/png",
+                                                    "image/jpg",
+                                                    "image/jpeg" );
 }
