@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
 
         // $_FILES["fileToUpload"]["error"] should be set, and it
         // should not be an array, indicating that more than one file was uploaded.
-        if(!isset($_FILES["fileToUpload"]["error"]) ||
+        if(! isset($_FILES["fileToUpload"]["error"]) ||
             is_array($_FILES["fileToUpload"]["error"]))
         {
             throw new RuntimeException("Missing error element or it is multiple files.");
@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
         // Check error value
         switch($_FILES["fileToUpload"]["error"]) {
             case UPLOAD_ERR_OK:
-                // Success, do nothing?
+                // Success, do nothing!
                 break;
             case UPLOAD_ERR_INI_SIZE:
                 throw new RuntimeException("Upload failed: File exceeds max file size defined in php.ini!");
@@ -61,7 +61,7 @@ if (isset($_POST["submit"])) {
         // Checking MIME type
         $filePath = $_FILES["fileToUpload"]["tmp_name"];
         $finfo = new finfo(FILEINFO_MIME_TYPE);
-        $mimeType = $finfo->file($filePath); // Struktur: "image/jpeg"
+        $mimeType = $finfo->file($filePath); // Structure: "image/jpeg"
         if(! array_search($mimeType, Config::$UPLOAD_VALID_MIME_TYPES)) {
             throw new RuntimeException("Update failed: Invalid file type!");
         }
@@ -73,7 +73,7 @@ if (isset($_POST["submit"])) {
         $isMoveSuccessful = move_uploaded_file($filePath, Config::$UPLOAD_PATH . $newFileName);
 
         if(! $isMoveSuccessful) {
-            throw new RuntimeException("Upload failed: ");
+            throw new RuntimeException("Upload failed: Moving file to permanent storage failed!");
         }
         else {
             echo 'Upload complete!';
@@ -81,7 +81,7 @@ if (isset($_POST["submit"])) {
 
     }
     catch (RuntimeException $e) {
-        $e->getMessage();
+        echo $e->getMessage();
     }
 
 }
