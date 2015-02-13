@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testFetchStudents</title>
+</head>
+<body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+	$(".search").click(function (evt) {
+		evt.preventDefault();
+
+		var val = $("#classCode").val();
+
+		if (val) {
+			$.ajax({
+				url: "test_studentsByClass.php",
+				type: "POST",
+				data: {'cc':val}
+			}).done(function (d) {
+				console.log(d);
+			});
+		}
+	});
+});
+</script>
+
+<form>
+	<p>
+		<label for="classCode">Klassekode
+			<input type="text" name="classCode" id="classCode">
+		</label>
+	</p>
+	<button class="search">SØK</button>
+</form>
+
+</body>
+</html>
