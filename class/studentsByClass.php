@@ -7,6 +7,7 @@ class studentsByClass {
 			$_dbh;
 
 	public $result;
+
 	/**
 	 * @param string $klassekode
 	 * @return array $return
