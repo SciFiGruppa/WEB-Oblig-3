@@ -6,7 +6,7 @@
 <h3>Søk i databasen</h3>
 
 <form action="search.php" method="post" id="SearchKnapp" name="SearchKnapp">
-        <td class="search">Søk: </td><td><input id="search" type="text" name="search"></td>
+        <td class="search">Søk: </td><td><input id="search" type="text" name="search" required></td>
         <td class="search"><input type="submit" value="Search" id="SearchKnapp" name="SearchKnapp"></td>
 </form>
 
@@ -19,13 +19,13 @@
 
                     $klasse = mysqli_query($db,"SELECT klasse.klassekode, klasse.klassenavn
                                             FROM klasse
-                                            Where (klasse.klassekode='$search' OR klasse.klassenavn='$search')");
+                                            Where klasse.klassekode LIKE '%$search%' OR klasse.klassenavn LIKE '%$search%'");
                     $student = mysqli_query($db,"SELECT student.brukernavn, student.fornavn, student.etternavn, student.klassekode, student.bildenr
                                             FROM student
-                                            Where (student.brukernavn='$search' OR student.fornavn='$search' OR student.etternavn='$search' OR student.klassekode='$search' OR student.bildenr='$search')");
+                                            Where student.brukernavn LIKE '%$search%' OR student.fornavn LIKE '%$search%' OR student.etternavn LIKE '%$search%' OR student.klassekode LIKE '%$search%' OR student.bildenr LIKE '%$search%'");
                     $bilde = mysqli_query($db,"SELECT bilde.bildenr, bilde.opplastingsdato, bilde.filnavn, bilde.beskrivelse
                                             FROM bilde
-                                            Where (bilde.bildenr='$search' OR bilde.opplastingsdato='$search' OR bilde.filnavn='$search' OR bilde.beskrivelse='$search' )");
+                                            Where bilde.bildenr LIKE '%$search%' OR bilde.opplastingsdato LIKE '%$search%' OR bilde.filnavn LIKE '%$search%' OR bilde.beskrivelse LIKE '%$search%'");
                     
                     $antallRaderklasse=mysqli_num_rows($klasse);
                     $antallRaderstudent=mysqli_num_rows($student);
@@ -43,10 +43,9 @@
 			                      echo "<tr class='name' style='outline: thin solid'>";
 			                      echo "<td class='name'>" . $row['klassekode'] . "</td>";
 			                      echo "<td class='name'>" . $row['klassenavn'] . "</td>";
-			                      echo "</tr>";  
-			                       echo "</table></p>";                    
+			                      echo "</tr>";          
 			                    }
-                                
+                                echo "</table></p>";  
                             }
                     if ($antallRaderstudent>0)  
                             {
@@ -67,8 +66,9 @@
 			                      echo "<td class='name'>" . $row['klassekode'] . "</td>";
 			                      echo "<td class='name'>" . $row['bildenr'] . "</td>";
 			                      echo "</tr>";    
-			                       echo "</table></p>";                  
+			                                      
 			                    }
+			                    echo "</table></p>";  
                                 
                             }
                     if ($antallRaderbilde>0)  
@@ -87,10 +87,9 @@
 			                      echo "<td class='name'>" . $row['opplastingsdato'] . "</td>";
 			                      echo "<td class='name'>" . $row['filnavn'] . "</td>";
 			                      echo "<td class='name'>" . $row['beskrivelse'] . "</td>";
-			                      echo "</tr>"; 
-			                       echo "</table></p>";                     
+			                      echo "</tr>";                 
 			                    }
-                                
+                                echo "</table></p>";  
                             }
                             
                     
