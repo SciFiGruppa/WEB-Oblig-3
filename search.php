@@ -6,8 +6,8 @@
 <h3>Søk i databasen</h3>
 
 <form action="search.php" method="post" id="SearchKnapp" name="SearchKnapp">
-        <td class="search">Søk: </td><td><input id="search" type="text" name="search" required></td>
-        <td class="search"><input type="submit" value="Search" id="SearchKnapp" name="SearchKnapp"></td>
+        <td class="search"><input id="search" type="text" name="search" required></td>
+        <td class="search"><input type="submit" value="Søk" id="SearchKnapp" name="SearchKnapp"></td>
 </form>
 
 <?php
@@ -40,7 +40,7 @@
                                 </tr>";
                                 while($row = mysqli_fetch_array($klasse)) 
 			                    {
-			                      echo "<tr class='name' style='outline: thin solid'>";
+			                      echo "<tr class='name'>";
 			                      echo "<td class='name'>" . $row['klassekode'] . "</td>";
 			                      echo "<td class='name'>" . $row['klassenavn'] . "</td>";
 			                      echo "</tr>";          
@@ -59,17 +59,15 @@
                                 </tr>";
                                 while($row = mysqli_fetch_array($student)) 
 			                    {
-			                      echo "<tr class='name' style='outline: thin solid'>";
+			                      echo "<tr class='name'>";
 			                      echo "<td class='name'>" . $row['brukernavn'] . "</td>";
 			                      echo "<td class='name'>" . $row['fornavn'] . "</td>";
 			                      echo "<td class='name'>" . $row['etternavn'] . "</td>";
 			                      echo "<td class='name'>" . $row['klassekode'] . "</td>";
 			                      echo "<td class='name'>" . $row['bildenr'] . "</td>";
-			                      echo "</tr>";    
-			                                      
+			                      echo "</tr>";                   
 			                    }
-			                    echo "</table></p>";  
-                                
+			                    echo "</table></p>";   
                             }
                     if ($antallRaderbilde>0)  
                             {
@@ -82,7 +80,7 @@
                                 </tr>";
                                 while($row = mysqli_fetch_array($bilde)) 
 			                    {
-			                      echo "<tr class='name' style='outline: thin solid'>";
+			                      echo "<tr class='name'>";
 			                      echo "<td class='name'>" . $row['bildenr'] . "</td>";
 			                      echo "<td class='name'>" . $row['opplastingsdato'] . "</td>";
 			                      echo "<td class='name'>" . $row['filnavn'] . "</td>";
@@ -91,19 +89,6 @@
 			                    }
                                 echo "</table></p>";  
                             }
-                            
-                    
-                    
-           
-
             }
-        
-
-
-
-
-
-
-    
     include("footer.html");
 ?>
