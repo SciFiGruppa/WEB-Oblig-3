@@ -83,12 +83,14 @@
 			                      echo "<tr class='name'>";
 			                      echo "<td class='name'>" . $row['bildenr'] . "</td>";
 			                      echo "<td class='name'>" . $row['opplastingsdato'] . "</td>";
-			                      echo "<td class='name'>" . $row['filnavn'] . "</td>";
+			                      echo "<td class='name'><a class='thumbnail' href='#thumb'>" . $row['filnavn'] . "<span><img src='img/" . $row['filnavn'] . "'>" . $row['beskrivelse'] . "</span></a></td>";
 			                      echo "<td class='name'>" . $row['beskrivelse'] . "</td>";
 			                      echo "</tr>";                 
 			                    }
                                 echo "</table></p>";  
                             }
             }
+
+
     include("footer.html");
 ?>
