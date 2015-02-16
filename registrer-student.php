@@ -2,7 +2,7 @@
   include("top.html");
 ?> 
 
-<h3>Registrer student </h3>
+<h3>Registrer student</h3>
 
 <form method="post" action="registrer-student.php" id="registrerStudentSkjema" name="registrerStudentSkjema">
         Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>

@@ -1,7 +1,4 @@
 # Filer/mapper som ikke skal legges under versjonskontroll.
 
-# Ignorer denne filen
-.gitignore
-
 # IntelliJ/PHPStorm IDE mappe
 .idea
