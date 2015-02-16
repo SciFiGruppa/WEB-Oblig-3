@@ -33,15 +33,22 @@ var sitefn = {
 		}
 	},
 	doAjax: function (data) {
-		var xmlhttp = this.getAjax();
+		var xmlhttp = this.getAjax(),
+			params = "cc="+data;
+
+		xmlhttp.open('POST', 'test_studentsByClass.php');
+
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.setRequestHeader("Content-length", params.length);
+		xmlhttp.setRequestHeader("Connection", "close");
+
 		xmlhttp.onreadystatechange = function () {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				console.log(xmlhttp.responseText);
-				console.log(data);
+				console.log(xmlhttp);
 			}
 		}
-		xmlhttp.open('POST', 'test_studentsByClass.php');
-		xmlhttp.send({'cc': data});
+		xmlhttp.send(params);
 	}
 }
 
