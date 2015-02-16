@@ -6,5 +6,3 @@ config.php
 
 # IntelliJ/PHPStorm IDE mappe
 .idea
-
-config.php
