@@ -6,3 +6,7 @@ config.php
 
 # IntelliJ/PHPStorm IDE mappe
 .idea
+<<<<<<< HEAD
+=======
+config.php
+>>>>>>> 476f0354ffa8cf47c702cc66531ba89ec213cfb4
