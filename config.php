@@ -6,9 +6,9 @@
 final class Config {
     // Database login info
     public static $DB_HOST_NAME = "localhost";
-    public static $DB_USER_NAME = "oblig3_user";
-    public static $DB_USER_PASSWORD = "oblig3_user_pw";
-    public static $DB_DB_NAME = "885666";
+    public static $DB_USER_NAME = "localuser";
+    public static $DB_USER_PASSWORD = "localpw";
+    public static $DB_DB_NAME = "106241";
 
     // Image upload constants
     public static $UPLOAD_PATH = "../img/";
