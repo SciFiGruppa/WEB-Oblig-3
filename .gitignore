@@ -2,6 +2,7 @@
 
 # Ignorer denne filen
 .gitignore
+config.php
 
 # IntelliJ/PHPStorm IDE mappe
 .idea

@@ -8,9 +8,17 @@
         {
             $rad=mysqli_fetch_array($sqlResultat); 
             $klassekode=$rad["klassekode"];       
-            $klassenavn=$rad["klassenavn"];    
-            print("<option value='$klassekode'>$klassekode $klassenavn</option>"); 
+            $klassenavn=$rad["klassenavn"]; 
+            if ($klassekode==$klassekodeedit)
+                {
+                    print("<option value='$klassekode' selected>$klassekode $klassenavn</option>");
+                }   
+            else 
+                {
+                    print("<option value='$klassekode'>$klassekode $klassenavn</option>"); 
+                }
         }
+
     print("</select>");
 ?>
   
