@@ -9,6 +9,7 @@
         Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
         Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
 		Klassekode <?php include("listeboks-klassekode.php"); ?>  <br/>
+        Bildenr <?php include("listeboks-bilde.php"); ?>  <br/>
 		<input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
 		<input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
@@ -20,7 +21,8 @@
             $brukernavn=$_POST ["brukernavn"]; 
             $fornavn=$_POST ["fornavn"];
             $etternavn=$_POST ["etternavn"];  
-            $klassekode=$_POST ["klassekode"];     
+            $klassekode=$_POST ["klassekode"];  
+            $bildenr=$_POST ["bildenr"];    
             if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
                 {
                     print ("Alle felt må fylles ut");  
@@ -37,7 +39,7 @@
                         }
                     else
                         {
-                           $sqlSetning="INSERT INTO student (brukernavn,fornavn,etternavn,klassekode) VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
+                           $sqlSetning="INSERT INTO student (brukernavn,fornavn,etternavn,klassekode, bildenr) VALUES('$brukernavn','$fornavn','$etternavn','$klassekode', '$bildenr');";
                            mysqli_query($db,$sqlSetning) or die ("ikke mulig å registrere data i databasen");
                            print ("Følgende student er nå registrert: $brukernavn $fornavn $etternavn $klassekode"); 
                         }

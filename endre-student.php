@@ -24,12 +24,18 @@
                     $brukernavn=$rad["brukernavn"];      
                     $fornavn=$rad["fornavn"];  
                     $etternavn=$rad["etternavn"];  
-                    $klassekode=$rad["klassekode"]; 
+                    $klassekodeedit=$rad["klassekode"]; 
+                    $bildenredit=$rad["bildenr"]; 
                     print ("<form method='post' action='endre-student.php' id='endreStudentSkjema' name='endreStudentSkjema'>");
                     print ("Brukernavn <input type='text' value='$brukernavn' name='brukernavn' id='brukernavn' readonly /> <br />");
                     print ("Fornavn <input type='text' value='$fornavn' name='fornavn' id='fornavn' required /> <br />");
                     print ("Etternavn <input type='text' value='$etternavn' name='etternavn' id='etternavn' reguired /> <br />");
-                    print ("Klassekode <input type='text' value='$klassekode' name='klassekode' id='klassekode' required /> <br />");
+                    print ("Klassekode "); 
+                    include('listeboks-klassekode.php'); 
+                    print ("<br/>");
+                    print ("Bildenr ");
+                    include('listeboks-bilde.php');
+                    print ("<br/>");
                     print ("<input type='submit' value='Endre student' name='endreStudentKnapp' id='endreStudentKnapp'>");
                     print ("</form>");
                 }
@@ -47,7 +53,7 @@
                 }
             else
                 {
-                    $sqlSetning="UPDATE student SET fornavn='$fornavn', etternavn='$etternavn', klassekode='$klassekode' WHERE brukernavn='$brukernavn';";
+                    $sqlSetning="UPDATE student SET fornavn='$fornavn', etternavn='$etternavn', klassekode='$klassekode', bildenr='$bildenr' WHERE brukernavn='$brukernavn';";
                     mysqli_query($db,$sqlSetning) or die ("ikke mulig å endre data i databasen");
                     print ("Studenten med brukernavn $brukernavn er nå endret<br />");
                 }

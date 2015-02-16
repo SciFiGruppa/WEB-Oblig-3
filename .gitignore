@@ -1,4 +1,11 @@
 # Filer/mapper som ikke skal legges under versjonskontroll.
 
+<<<<<<< HEAD
+=======
+# Ignorer denne filen
+.gitignore
+config.php
+
+>>>>>>> c993ab5234bc7f5f0c6c342b9ca948c6add6215a
 # IntelliJ/PHPStorm IDE mappe
 .idea
