@@ -1,5 +1,6 @@
 <?php  
     include("top.html");
+    include("php/connect.php");
 ?> 
 
 <h3>Registrer Klasse </h3>
@@ -36,7 +37,7 @@
                }
             else if(ctype_alpha(substr($klassekode, 0, -1)))
                 {
-                include("connect.php"); 
+                 
                     $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
                     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");
                     $antallRader=mysqli_num_rows($sqlResultat); 

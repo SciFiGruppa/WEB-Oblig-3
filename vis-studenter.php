@@ -1,6 +1,6 @@
 <?php    
     include("top.html");
-    include("connect.php");  
+    include("php/connect.php");  
     $sqlSetning="SELECT * FROM student ORDER BY brukernavn;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  
     $antallRader=mysqli_num_rows($sqlResultat); 
