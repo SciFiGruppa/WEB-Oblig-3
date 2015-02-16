@@ -8,4 +8,6 @@
 		$students = new studentsByClass($input, $db);
 
 		echo json_encode(array ('result' => $students->result, 'input' => $input) );
+	} else {
+		echo json_encode(array ('result' => 'not enough params', 'input' => $_POST) );
 	}
