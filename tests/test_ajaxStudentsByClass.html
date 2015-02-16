@@ -4,10 +4,10 @@
 	<title>testFetchStudents</title>
 </head>
 <body>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>-->
 
 <script type="text/javascript">
-$(document).ready(function () {
+/*$(document).ready(function () {
 	$(".search").click(function (evt) {
 		evt.preventDefault();
 
@@ -23,17 +23,46 @@ $(document).ready(function () {
 			});
 		}
 	});
-});
+});*/
+var sitefn = {
+	getAjax: function () {
+		if (window.XMLHttpRequest) {
+			return new XMLHttpRequest();
+		} else {
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	},
+	doAjax: function (data) {
+		var xmlhttp = this.getAjax();
+		xmlhttp.onreadystatechange = function () {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				console.log(xmlhttp.responseText);
+				console.log(data);
+			}
+		}
+		xmlhttp.open('POST', 'test_studentsByClass.php');
+		xmlhttp.send({'cc': data});
+	}
+}
+
 </script>
 
-<form>
+<form id="ccForm">
 	<p>
 		<label for="classCode">Klassekode
-			<input type="text" name="classCode" id="classCode">
+			<select onchange="sitefn.doAjax(this.value)" onfocus="sitefn.doAjax(this.value)" id="ccSelect">
+				<option value="IS1">Informasjonssystemer 1. År</option>
+				<option value="HISTORIE1">Historie 1. År</option>
+			</select>
 		</label>
 	</p>
 	<button class="search">SØK</button>
 </form>
+
+<div class="hidden">
+	<p>This should be hidden.</p>
+	<ul id="students"></ul>
+</div>
 
 </body>
 </html>
