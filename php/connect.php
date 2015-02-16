@@ -19,3 +19,7 @@ class DatabaseConnector {
   }
 
 }
+
+// Lazy "hack" so we dont have to refactor all the .php files.
+$dbconnector = new DatabaseConnector();
+$db = $dbconnector->getConnection();
