@@ -5,3 +5,5 @@
 
 # IntelliJ/PHPStorm IDE mappe
 .idea
+
+config.php
