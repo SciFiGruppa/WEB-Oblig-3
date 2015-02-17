@@ -45,7 +45,7 @@ class ImageManager {
 
 
             // Delete the image from the server
-            $filePath = "../" . Config::$UPLOAD_PATH . $imageName;
+            $filePath = Config::$UPLOAD_PATH . $imageName;
             if(file_exists($filePath)) {
                 unlink($filePath);
             } else {
@@ -57,9 +57,10 @@ class ImageManager {
             $query = "DELETE FROM bilde WHERE bildenr = $imageNumber;";
             $deleteResult = mysqli_query($this->dbLink, $query);
 
-            // There should be no errors and the returned results should be empty.
-            if(mysqli_errno($this->dbLink) !== 0 || count($deleteResult) !== 0) {
-                throw new RuntimeException("Error while deleting image from database. Returned resultset > 0 or mysqli error code > 0");
+            // There should be no errors
+            if(mysqli_errno($this->dbLink) !== 0) {
+                var_dump($deleteResult);
+                throw new RuntimeException("Error while deleting image from database. Mysqli error code > 0");
             }
         }
         catch(RuntimeException $e) {
