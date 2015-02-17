@@ -3,15 +3,10 @@
     include("php/connect.php");  
 ?>
 
-<h3>Søk i databasen</h3>
+<h3>Søkeresultat:</h3>
 
-<form action="search.php" method="post" id="SearchKnapp" name="SearchKnapp">
-        <td class="search"><input id="search" type="text" name="search" required></td>
-        <td class="search"><input type="submit" value="Søk" id="SearchKnapp" name="SearchKnapp"></td>
-</form>
-
-<?php
-       @$SearchKnapp=$_POST ["SearchKnapp"];
+<?php 
+@$SearchKnapp=$_POST ["SearchKnapp"];
     if ($SearchKnapp)
         {
 
@@ -30,7 +25,6 @@
                     $antallRaderklasse=mysqli_num_rows($klasse);
                     $antallRaderstudent=mysqli_num_rows($student);
                     $antallRaderbilde=mysqli_num_rows($bilde);
-
                     if ($antallRaderklasse>0)  
                             {
                               echo "<p class='list'><table class='output' border='1'>
