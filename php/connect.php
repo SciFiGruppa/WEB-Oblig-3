@@ -1,6 +1,4 @@
 <?php
-require_once 'php/config.php';
-
 class DatabaseConnector {
 
   private $dbLink = null;

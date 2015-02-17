@@ -2,28 +2,43 @@
 <html>
 <head>
 	<title>testFetchStudents</title>
+	<meta charset="UTF-8">
 </head>
 <body>
 <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>-->
+<form id="ccForm">
+	<p>
+		<label for="classCode">Klassekode
+			<select onblur="domfn.emptyList('students')" onchange="sitefn.doAjax(this.value, 'students')" id="ccSelect">
+				<option value="IS1">Informasjonssystemer 1. År</option>
+				<option value="HISTORIE1">Historie 1. År</option>
+			</select>
+		</label>
+	</p>
+</form>
+
+<div class="hidden">
+	<ul id="students"></ul>
+</div>
 
 <script type="text/javascript">
-/*$(document).ready(function () {
-	$(".search").click(function (evt) {
-		evt.preventDefault();
-
-		var val = $("#classCode").val();
-
-		if (val) {
-			$.ajax({
-				url: "test_studentsByClass.php",
-				type: "POST",
-				data: {'cc':val}
-			}).done(function (d) {
-				console.log(d);
-			});
+var domfn = {
+	fillDom: function (array, id) {
+		var ul = document.getElementById(id);
+		for (var i = 0; i < array.length; i++) {
+			var newElement = document.createElement('li'),
+				elementText = document.createTextNode(array[i]);
+			newElement.appendChild(elementText);
+			ul.appendChild(newElement);
 		}
-	});
-});*/
+	},
+	emptyList: function (id) {
+		var ul = document.getElementById(id);
+
+		ul.innerHTML = '';
+	}
+}
+
 var sitefn = {
 	getAjax: function () {
 		if (window.XMLHttpRequest) {
@@ -32,44 +47,27 @@ var sitefn = {
 			return new ActiveXObject("Microsoft.XMLHTTP");
 		}
 	},
-	doAjax: function (data) {
+	doAjax: function (data, domlist) {
 		var xmlhttp = this.getAjax(),
 			params = "cc="+data;
+
+		domfn.emptyList(domlist);
 
 		xmlhttp.open('POST', 'test_studentsByClass.php');
 
 		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xmlhttp.setRequestHeader("Content-length", params.length);
-		xmlhttp.setRequestHeader("Connection", "close");
 
 		xmlhttp.onreadystatechange = function () {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				console.log(xmlhttp.responseText);
-				console.log(xmlhttp);
+				var response = JSON.parse(xmlhttp.responseText);
+				console.log(response);
+				domfn.fillDom(response.students, domlist);
 			}
 		}
 		xmlhttp.send(params);
 	}
 }
-
 </script>
-
-<form id="ccForm">
-	<p>
-		<label for="classCode">Klassekode
-			<select onchange="sitefn.doAjax(this.value)" onfocus="sitefn.doAjax(this.value)" id="ccSelect">
-				<option value="IS1">Informasjonssystemer 1. År</option>
-				<option value="HISTORIE1">Historie 1. År</option>
-			</select>
-		</label>
-	</p>
-	<button class="search">SØK</button>
-</form>
-
-<div class="hidden">
-	<p>This should be hidden.</p>
-	<ul id="students"></ul>
-</div>
 
 </body>
 </html>

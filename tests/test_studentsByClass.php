@@ -1,13 +1,12 @@
 <?php
 	if (isset($_POST['cc'])) {
 		require_once '../class/studentsByClass.php';
-		require_once '../connect.php';
+		require_once '../php/connect.php';
+		require_once '../php/config.php';
 
 		$input = filter_var($_POST['cc'], FILTER_SANITIZE_STRING);//$_POST['cc'];
+		$db = new DatabaseConnector();
+		$students = new studentsByClass($input, $db->getConnection());
 
-		$students = new studentsByClass($input, $db);
-
-		echo json_encode(array ('result' => $students->result, 'input' => $input) );
-	} else {
-		echo json_encode(array ('result' => 'not enough params', 'input' => $_POST) );
+		echo json_encode($students->result);
 	}
