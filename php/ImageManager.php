@@ -35,8 +35,8 @@ class ImageManager {
 
             // The row should only have 1 element.
             $row = mysqli_fetch_row($result);
-            if(count($row) < 1) {
-                throw new RuntimeException("Error while querying database. More than 1 element in result row.");
+            if(count($row) < 1 || $result === false) {
+                throw new RuntimeException("Error while querying database. More than 1 element in result row or false result set.");
             }
 
             $imageName = $row[0];
