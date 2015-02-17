@@ -1,10 +1,12 @@
+<?php require_once 'top.html' ?>
+
 <h3>Registrer bilde</h3>
 
 <!-- Form used for uploading image -->
 <form action="" method="post" enctype="multipart/form-data">
-    Velg bilde: <input type="file" name="fileToUpload" id="fileToUpload" > <br>
-    Beskrivelse: <input type="text" name="fileDescription" id="fileDescription" > <br>
-    <input type="submit" value="Last opp bilde" name="submit" >
+    <input type="file" name="fileToUpload" id="fileToUpload" > <br> <br>
+    Beskrivelse: <input type="text" name="fileDescription" id="fileDescription" > <br> <br>
+    <input type="submit" value="Last opp" name="submit" >
 </form>
 
 <?php
@@ -23,3 +25,5 @@ if(isset($_POST["submit"])) {
     }
 }
 ?>
+
+<?php require_once 'footer.html' ?>

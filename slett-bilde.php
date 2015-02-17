@@ -1,3 +1,5 @@
+<?php require_once 'top.html' ?>
+
 <h3>Slett bilde</h3>
 
 <form method="POST" action="">
@@ -20,6 +22,7 @@ if(isset($_POST["submit"])) {
         echo 'Deleting successfull!';
     }
 }
-
 ?>
+
+<?php require_once 'footer.html' ?>
 
