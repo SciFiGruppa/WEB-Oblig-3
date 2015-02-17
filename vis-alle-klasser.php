@@ -18,7 +18,7 @@
 ?>
 
 <h3>Hent klasseliste</h3>
-<form method="post" action="hentklasse.php" id="hentKlasse" name="hentKlasse">
+<form method="post" action="" id="hentKlasse" name="hentKlasse">
     Klasse <?php include("listeboks-klassekode.php"); ?>  <br/>
     <input type="submit"  value="Vis studenter" name="hentKlasseKnapp" id="hentKlasseKnapp"> 
 </form>
