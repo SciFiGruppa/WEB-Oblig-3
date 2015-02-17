@@ -15,6 +15,18 @@
             print ("<tr> <td> $klassekode </td> <td> $klassenavn </td> </tr>"); 
         }
     print ("</table>");  
+?>
+
+<h3>Hent klasseliste</h3>
+<form method="post" action="hentklasse.php" id="hentKlasse" name="hentKlasse">
+    Klasse <?php include("listeboks-klassekode.php"); ?>  <br/>
+    <input type="submit"  value="Vis studenter" name="hentKlasseKnapp" id="hentKlasseKnapp"> 
+</form>
+
+
+<?php 
+
     include("footer.html");
 ?>
+
   
