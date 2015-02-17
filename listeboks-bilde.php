@@ -4,7 +4,7 @@
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen"); 
     $antallRader=mysqli_num_rows($sqlResultat); 
     print("<select name='bildenr' id='bildenr'>");
-    print("<option value=''>N/A Har ikke bilde</option>");
+    print("<option value=''>-----------------------------------</option>");
     for ($r=1;$r<=$antallRader;$r++)
         {
             $rad=mysqli_fetch_array($sqlResultat); 

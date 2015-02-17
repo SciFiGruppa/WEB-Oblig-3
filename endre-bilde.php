@@ -3,7 +3,7 @@
 ?> 
 <h3>Endre bilde</h3>
 <form method="post" action="endre-bilde.php" id="finnBildeSkjema" name="finnBildeSkjema">
-    Student <?php require_once("listeboks-bilde.php"); ?>  <br/>
+    Bildenr <?php require_once("listeboks-bilde.php"); ?>  <br/>
     <input type="submit"  value="Finn bilde" name="finnBildeKnapp" id="finnBildeKnapp"> 
 </form>
 <?php
