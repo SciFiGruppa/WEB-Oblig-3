@@ -1,4 +1,5 @@
 <?php
+require_once("config.php");
 
 /**
  * Class for managing images.
@@ -11,12 +12,61 @@
  */
 
 class ImageManager {
-    // This variable holds the latest RuntimeException
-    // that occurred during the upload, if any.
     private $dbLink = null;
 
     public function __construct($dbLink) {
         $this->dbLink = $dbLink;
+    }
+
+    /**
+     * @param $imageNumber integer The image's number in the database.
+     * @return bool|RuntimeException Returns true if deleting was successful,
+     *                               or a RuntimeException with an error message if not.
+     */
+    public function deleteImage($imageNumber) {
+        try {
+            // Getting image name
+            $query = "SELECT filnavn FROM bilde WHERE bildenr = $imageNumber;";
+            $result = mysqli_query($this->dbLink, $query);
+
+            // Error code should be 0
+            if(mysqli_errno($this->dbLink) !== 0) {
+                throw new RuntimeException("Error while querying database.
+                                            Mysqli error number: " . mysqli_errno($this->dbLink));
+            }
+
+            // The row should only have 1 element.
+            $row = mysqli_fetch_row($result);
+            if(count($row) < 1) {
+                throw new RuntimeException("Error while querying database. More than 1 element in result row.");
+            }
+
+            $imageName = $row[0];
+
+
+            // Delete the image from the server
+            $filePath = "../" . Config::$UPLOAD_PATH . $imageName;
+            if(file_exists($filePath)) {
+                unlink($filePath);
+            } else {
+                throw new RuntimeException("Error while deleting file from server. The file does not exist.");
+            }
+
+
+            // Delete the image from the DB
+            $query = "DELETE FROM bilde WHERE bildenr = $imageNumber;";
+            $deleteResult = mysqli_query($this->dbLink, $query);
+
+            // There should be no errors and the returned results should be empty.
+            if(mysqli_errno($this->dbLink) !== 0 || count($deleteResult) !== 0) {
+                throw new RuntimeException("Error while deleting image from database. Returned resultset > 0 or mysqli error code > 0");
+            }
+        }
+        catch(RuntimeException $e) {
+            return $e;
+        }
+
+        return true;
     }
 
     /**

@@ -3,6 +3,7 @@
 # Ignorer denne filen
 .gitignore
 php/config.php
+img/*
 
 # IntelliJ/PHPStorm IDE mappe
 .idea

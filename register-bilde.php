@@ -6,7 +6,7 @@
 </form>
 
 <?php
-require_once 'php/upload.php';
+require_once 'php/ImageManager.php';
 require_once 'php/connect.php';
 
 if(isset($_POST["submit"])) {
