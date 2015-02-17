@@ -1,5 +1,6 @@
 <?php  
     include("top.html");
+    require_once("php/config.php");
     include("php/connect.php");
 
     $sqlSetning="SELECT * FROM bilde ORDER BY bildenr;";

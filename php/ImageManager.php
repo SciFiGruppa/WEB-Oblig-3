@@ -1,6 +1,4 @@
 <?php
-require_once("config.php");
-
 /**
  * Class for managing images.
  * Features:

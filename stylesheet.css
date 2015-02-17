@@ -106,3 +106,21 @@ top: 0;
 left: 60px; /*position where enlarged image should offset horizontally */
 
 }
+
+
+#reg-student {
+	width: 40%;
+}
+#student-list {
+	width: 50%;
+	text-align: center;
+}
+#student-list-ol {
+	text-align: left;
+}
+.float-left {
+	float: left;
+}
+.clear {
+	clear: both;
+}

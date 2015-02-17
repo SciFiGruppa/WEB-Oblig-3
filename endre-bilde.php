@@ -1,5 +1,6 @@
 <?php
     include("top.html");
+    require_once("php/config.php");
 ?> 
 <h3>Endre bilde</h3>
 <form method="post" action="endre-bilde.php" id="finnBildeSkjema" name="finnBildeSkjema">

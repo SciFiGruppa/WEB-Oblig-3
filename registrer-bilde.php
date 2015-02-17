@@ -1,4 +1,6 @@
-<?php require_once 'top.html' ?>
+<?php
+    require_once 'top.html';
+?>
 
 <h3>Registrer bilde</h3>
 
@@ -11,6 +13,7 @@
 
 <?php
 require_once 'php/ImageManager.php';
+require_once("php/config.php");
 require_once 'php/connect.php';
 
 if(isset($_POST["submit"])) {

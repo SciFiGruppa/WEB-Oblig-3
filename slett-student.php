@@ -1,5 +1,6 @@
 <?php 
     include("top.html");
+    require_once("php/config.php");
 ?> 
 <h3>Slett student</h3>
 <form method="post" action="slett-student.php" id="slettStudentSkjema" name="slettStudentSkjema" cleaned="return bekreft()">

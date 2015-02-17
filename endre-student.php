@@ -1,5 +1,6 @@
 <?php
     include("top.html");
+    require_once("php/config.php");
 ?> 
 <h3>Endre Student</h3>
 <form method="post" action="endre-student.php" id="finnStudentSkjema" name="finnStudentSkjema">

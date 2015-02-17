@@ -1,5 +1,6 @@
 <?php    
     include("top.html");
+    require_once("php/config.php");
     include("php/connect.php");  
     $sqlSetning="SELECT * FROM student ORDER BY brukernavn;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  

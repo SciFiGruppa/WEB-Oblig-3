@@ -1,5 +1,6 @@
 <?php 
     include("top.html");
+    require_once("php/config.php");
 ?> 
 <h3>Slett klasse</h3>
 <form method="post" action="slett-klasse.php" id="slettKlasseSkjema" name="slettKlasseSkjema" cleaned="return bekreft()">

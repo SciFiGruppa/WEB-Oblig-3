@@ -1,6 +1,5 @@
 <?php
-	
-class studentsByClass {
+class StudentsByClass {
 
 	private $_classStudents = array(),
 			$_classCode,
@@ -39,7 +38,7 @@ class studentsByClass {
 			mysqli_stmt_bind_result($stmt, $fn, $ln);
 
 			while (mysqli_stmt_fetch($stmt)) {
-				$this->_classStudents["students"][] = $fn . " " . $ln;
+				$this->_classStudents[] = $fn . " " . $ln;
 			}
 
 			mysqli_stmt_close($stmt);

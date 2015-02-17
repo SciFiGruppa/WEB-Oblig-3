@@ -1,6 +1,7 @@
 <?php  
     include("top.html");
-    include("connect.php");  
+    require_once("php/config.php");
+    include("connect.php");
 ?>
 
 <h3>Hent klasseliste</h3>
