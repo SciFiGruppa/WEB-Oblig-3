@@ -7,7 +7,7 @@ final class Config {
     // Database login info
     public static $DB_HOST_NAME = "localhost";
     public static $DB_USER_NAME = "root";
-    public static $DB_USER_PASSWORD = "";
+    public static $DB_USER_PASSWORD = "scifi";
     public static $DB_DB_NAME = "885666";
 
     // Image upload constants

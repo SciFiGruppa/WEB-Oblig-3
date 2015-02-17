@@ -1,6 +1,6 @@
 <?php  
     include("top.html");
-    include("connect.php");
+    include("php/connect.php");
 
     $sqlSetning="SELECT * FROM bilde ORDER BY bildenr;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  
@@ -15,7 +15,7 @@
             $opplastingsdato=$rad["opplastingsdato"];    
             $filnavn=$rad["filnavn"];  
             $beskrivelse=$rad["beskrivelse"]; 
-            print ("<tr> <td> $bildenr </td> <td> $opplastingsdato </td> <td> <a href=img/$filnavn> $filnavn </a> </td> <td> $beskrivelse </td> </tr>"); 
+            print ("<tr> <td> $bildenr </td> <td> $opplastingsdato </td> <td> <a class='thumbnail' href='#thumb'> $filnavn <span><img src='img/$filnavn'>$beskrivelse</span></a> </td> <td> $beskrivelse </td> </tr>"); 
         }
     print ("</table>");  
     include("footer.html");

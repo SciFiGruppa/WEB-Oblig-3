@@ -1,5 +1,6 @@
 <?php 
   include("top.html");
+  include("php/connect.php");
 ?> 
 
 <h3>Registrer student</h3>
@@ -29,7 +30,6 @@
                 }
             else
                 {
-                    include("connect.php"); 
                     $sqlSetning="SELECT * FROM student WHERE brukernavn='$brukernavn';";
                     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");
                     $antallRader=mysqli_num_rows($sqlResultat); 

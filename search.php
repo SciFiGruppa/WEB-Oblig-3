@@ -1,6 +1,6 @@
 <?php    
     include("top.html");
-    include("connect.php");  
+    include("php/connect.php");  
 ?>
 
 <h3>Søk i databasen</h3>
