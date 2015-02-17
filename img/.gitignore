@@ -1,0 +1,6 @@
+# Denne filen sier at git skal ignorere innholdet i denne mappa, men ikke seg selv.
+# La denne filen ligge i img/ mappa.
+
+*
+
+!.gitignore
