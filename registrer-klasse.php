@@ -1,6 +1,6 @@
 <?php  
-    include("top.html");
-    include("php/connect.php");
+    require_once("top.html");
+    require_once("php/connect.php");
 ?> 
 
 <h3>Registrer Klasse </h3>
@@ -60,6 +60,6 @@
                     
                 }
         }
-    include("footer.html");
+    require_once("footer.html");
 ?> 
   

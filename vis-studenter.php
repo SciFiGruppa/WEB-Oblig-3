@@ -1,6 +1,6 @@
 <?php    
-    include("top.html");
-    include("php/connect.php");  
+    require_once("top.html");
+    require_once("php/connect.php");
     $sqlSetning="SELECT * FROM student ORDER BY brukernavn;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  
     $antallRader=mysqli_num_rows($sqlResultat); 
@@ -17,6 +17,6 @@
             print ("<tr> <td> $brukernavn </td> <td> $fornavn </td> <td> $etternavn </td> <td> $klassekode </td></tr>");  
         }
     print ("</table>");  
-    include("footer.html");
+    require_once("footer.html");
 ?>
   

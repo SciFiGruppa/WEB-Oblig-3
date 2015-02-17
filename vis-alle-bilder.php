@@ -1,6 +1,6 @@
 <?php  
-    include("top.html");
-    include("php/connect.php");
+    require_once("top.html");
+    require_once("php/connect.php");
 
     $sqlSetning="SELECT * FROM bilde ORDER BY bildenr;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  
@@ -18,5 +18,5 @@
             print ("<tr> <td> $bildenr </td> <td> $opplastingsdato </td> <td> <a class='thumbnail' href='#thumb'> $filnavn <span><img src='img/$filnavn'>$beskrivelse</span></a> </td> <td> $beskrivelse </td> </tr>"); 
         }
     print ("</table>");  
-    include("footer.html");
+    require_once("footer.html");
 ?>

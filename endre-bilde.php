@@ -1,9 +1,9 @@
 <?php
-    include("top.html");
+    require_once("top.html");
 ?> 
 <h3>Endre bilde</h3>
 <form method="post" action="endre-bilde.php" id="finnBildeSkjema" name="finnBildeSkjema">
-    Student <?php include("listeboks-bilde.php"); ?>  <br/>
+    Student <?php require_once("listeboks-bilde.php"); ?>  <br/>
     <input type="submit"  value="Finn bilde" name="finnBildeKnapp" id="finnBildeKnapp"> 
 </form>
 <?php
@@ -50,6 +50,6 @@
                     print ("Beskrivelsen på bildet er nå endret<br />");
                 }
         }
-    include("footer.html");
+    require_once("footer.html");
 ?> 
   

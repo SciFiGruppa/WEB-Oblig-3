@@ -1,6 +1,6 @@
 <?php 
-  include("top.html");
-  include("php/connect.php");
+  require_once("top.html");
+  require_once("php/connect.php");
 ?> 
 
 <h3>Registrer student</h3>
@@ -9,8 +9,8 @@
         Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
         Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
         Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
-		Klassekode <?php include("listeboks-klassekode.php"); ?>  <br/>
-        Bildenr <?php include("listeboks-bilde.php"); ?>  <br/>
+		Klassekode <?php require_once("listeboks-klassekode.php"); ?>  <br/>
+        Bildenr <?php require_once("listeboks-bilde.php"); ?>  <br/>
 		<input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
 		<input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
@@ -45,6 +45,6 @@
                         }
                 }
         }
-    include("footer.html");
+    require_once("footer.html");
 ?> 
   

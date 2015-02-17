@@ -1,6 +1,6 @@
 <?php  
-    include("top.html");
-    include("php/connect.php");  
+    require_once("top.html");
+    require_once("php/connect.php");
     $sqlSetning="SELECT * FROM klasse ORDER BY klassekode;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  
     $antallRader=mysqli_num_rows($sqlResultat); 
@@ -15,6 +15,6 @@
             print ("<tr> <td> $klassekode </td> <td> $klassenavn </td> </tr>"); 
         }
     print ("</table>");  
-    include("footer.html");
+    require_once("footer.html");
 ?>
   

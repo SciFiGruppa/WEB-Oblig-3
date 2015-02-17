@@ -1,9 +1,9 @@
 <?php 
-    include("top.html");
+    require_once("top.html");
 ?> 
 <h3>Slett klasse</h3>
 <form method="post" action="slett-klasse.php" id="slettKlasseSkjema" name="slettKlasseSkjema" cleaned="return bekreft()">
-    Klasse <?php include("listeboks-klassekode.php"); ?> <br/>
+    Klasse <?php require_once("listeboks-klassekode.php"); ?> <br/>
     <input type="submit" value="Slett Klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" onclick="return confirm('Er du sikker?')" /> 
 </form>
 <?php
@@ -15,5 +15,5 @@
             mysqli_query($db,$sqlSetning) or die ("ikke mulig å slette data i databasen");  /* SQL-setning sendt til database-serveren */
             print ("Følgende Klasse er nå slettet: $klassekode <br />");
         }
-    include("footer.html");
+    require_once("footer.html");
 ?> 

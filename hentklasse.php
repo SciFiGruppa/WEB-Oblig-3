@@ -1,11 +1,11 @@
 <?php  
-    include("top.html");
-    include("connect.php");  
+    require_once("top.html");
+    require_once("connect.php");
 ?>
 
 <h3>Hent klasseliste</h3>
 <form method="post" action="hentklasse.php" id="hentKlasse" name="hentKlasse">
-    Klasse <?php include("listeboks-klassekode.php"); ?>  <br/>
+    Klasse <?php require_once("listeboks-klassekode.php"); ?>  <br/>
     <input type="submit"  value="Vis studenter" name="hentKlasseKnapp" id="hentKlasseKnapp"> 
 </form>
 
@@ -47,5 +47,5 @@ WHERE klassekode='$klassekode';";
 		}
 	}
     print ("</table>");  
-    include("footer.html");
+    require_once("footer.html");
 ?>

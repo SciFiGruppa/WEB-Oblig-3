@@ -1,5 +1,5 @@
 <?php
-include("top.html");
+require_once("top.html");
 ?> 
 <h1>WEB1000 - OBLIGATORISK OPPGAVE 3</h1>
 <p>Vedlikeholdsapplikasjonen inneholder brukerfunksjoner for følgende operasjoner:</p>
@@ -37,5 +37,5 @@ når et annet felt (brukernavn, fornavn, etternavn, bildenr) får fokus skal ove
 Besvarelsen av oppgaven skal ligge i følgende mappe på studentserveren: https://home.hbv.no/BRUKERNAVN/web1000/innlevering3<br>
 
 <?php
-include("footer.html");
+require_once("footer.html");
 ?>

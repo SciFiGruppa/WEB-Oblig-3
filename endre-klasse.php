@@ -1,9 +1,9 @@
 <?php
-    include("top.html");
+    require_once("top.html");
 ?> 
 <h3>Endre Klasse</h3>
 <form method="post" action="endre-klasse.php" id="finnKlasseSkjema" name="finnKlasseSkjema">
-    Klasse <?php include("listeboks-klassekode.php"); ?>  <br/>
+    Klasse <?php require_once("listeboks-klassekode.php"); ?>  <br/>
     <input type="submit"  value="Finn klasse" name="finnKlasseKnapp" id="finnKlasseKnapp"> 
 </form>
 <?php
@@ -46,6 +46,6 @@
                     print ("Klassen med klassekode $klassekode er nå endret<br />");
                 }
     	}
-    include("footer.html");
+    require_once("footer.html");
 ?> 
   

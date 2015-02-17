@@ -1,9 +1,9 @@
 <?php
-    include("top.html");
+    require_once("top.html");
 ?> 
 <h3>Endre Student</h3>
 <form method="post" action="endre-student.php" id="finnStudentSkjema" name="finnStudentSkjema">
-    Student <?php include("listeboks-student.php"); ?>  <br/>
+    Student <?php require_once("listeboks-student.php"); ?>  <br/>
     <input type="submit"  value="Finn student" name="finnStudentKnapp" id="finnStudentKnapp"> 
 </form>
 <?php
@@ -31,10 +31,10 @@
                     print ("Fornavn <input type='text' value='$fornavn' name='fornavn' id='fornavn' required /> <br />");
                     print ("Etternavn <input type='text' value='$etternavn' name='etternavn' id='etternavn' reguired /> <br />");
                     print ("Klassekode "); 
-                    include('listeboks-klassekode.php'); 
+                    require_once('listeboks-klassekode.php');
                     print ("<br/>");
                     print ("Bildenr ");
-                    include('listeboks-bilde.php');
+                    require_once('listeboks-bilde.php');
                     print ("<br/>");
                     print ("<input type='submit' value='Endre student' name='endreStudentKnapp' id='endreStudentKnapp'>");
                     print ("</form>");
@@ -58,6 +58,6 @@
                     print ("Studenten med brukernavn $brukernavn er nå endret<br />");
                 }
         }
-    include("footer.html");
+    require_once("footer.html");
 ?> 
   
