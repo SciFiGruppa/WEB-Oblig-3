@@ -178,7 +178,7 @@ class ImageManager {
         $today = date("Y-m-d"); // Format: 2015-02-16
 
         // Registering to database
-        $query = "INSERT INTO bilde (dato, filnavn, beskrivelse) VALUES ('$today', '$fileName', '$imgDescription');";
+        $query = "INSERT INTO bilde (opplastingsdato, filnavn, beskrivelse) VALUES ('$today', '$fileName', '$imgDescription');";
         mysqli_query($this->dbLink, $query);
 
         if(mysqli_errno($this->dbLink) === 0) {

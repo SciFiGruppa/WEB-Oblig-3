@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
+    require_once('php/connect.php');
+=======
+<?php  
     require_once("php/connect.php");
+>>>>>>> master
     $sqlSetning="SELECT * FROM bilde ORDER BY bildenr;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen"); 
     $antallRader=mysqli_num_rows($sqlResultat); 

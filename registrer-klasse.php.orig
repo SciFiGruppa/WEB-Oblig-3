@@ -1,6 +1,10 @@
 <?php  
+<<<<<<< HEAD
+    include("top.html");
+    require_once("php/config.php");
+=======
     require_once("top.html");
-    require_once("php/connect.php");
+>>>>>>> master
     require_once("php/connect.php");
 ?> 
 
