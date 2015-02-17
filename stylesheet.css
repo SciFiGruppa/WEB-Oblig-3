@@ -68,6 +68,11 @@ div#body {
 	padding: 10px 50px 20px 50px;
 }
 
+form#SearchKnapp {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
 /*THUMBNAIL HOVERPOPUPS*/
 .thumbnail{
 position: relative;
