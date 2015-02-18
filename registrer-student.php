@@ -7,13 +7,21 @@
 <div class="float-left" id="reg-student">
     <h3>Registrer student</h3>
     <form method="post" action="registrer-student.php" id="registrerStudentSkjema" name="registrerStudentSkjema">
-            Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
-            Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
-            Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+            Brukernavn <input type="text" id="brukernavn" name="brukernavn" required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()" /> <br/>
+            Fornavn <input type="text" id="fornavn" name="fornavn" required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()"/> <br/>
+            Etternavn <input type="text" id="etternavn" name="etternavn" required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()"/> <br/>
 		Klassekode <?php require_once("listeboks-klassekode.php"); ?>  <br/>
         Bildenr <?php require_once("listeboks-bilde.php"); ?>  <br/>
     		<input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
     		<input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
+
+
+
+<p id="melding"><p>
+
+
+
+
     </form>
 </div>
 <div class="float-left" id="student-list">

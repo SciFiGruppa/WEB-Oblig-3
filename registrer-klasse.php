@@ -7,10 +7,14 @@
 <h3>Registrer Klasse </h3>
 
 <form method="post" action="registrer-klasse.php" id="registrerFagSkjema" name="registrerFagSkjema">
-		Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
-		Klassenavn <input type="text" id="klassenavn" name="klassenavn" required /> <br/>
+		Klassekode <input type="text" id="klassekode" name="klassekode" required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()"/> <br/>
+		Klassenavn <input type="text" id="klassenavn" name="klassenavn" required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()"/> <br/>
 		<input type="submit" value="Registrer fag" id="registrerFagKnapp" name="registrerFagKnapp" /> 
 		<input type="reset" value="Nullstill" id="nullstill2" name="nullstill2" /> <br />
+
+<p id="melding"><p>
+
+        
 </form>
 
 <?php 

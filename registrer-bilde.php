@@ -4,11 +4,16 @@
 
 <h3>Registrer bilde</h3>
 
-<!-- Form used for uploading image -->
+
 <form action="" method="post" enctype="multipart/form-data">
     <input type="file" name="fileToUpload" id="fileToUpload" > <br> <br>
-    Beskrivelse: <input type="text" name="fileDescription" id="fileDescription" > <br> <br>
+    Beskrivelse: <input type="text" name="fileDescription" id="fileDescription" required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()" > <br> <br>
     <input type="submit" value="Last opp" name="submit" >
+
+
+<p id="melding"><p>
+
+
 </form>
 
 <?php
