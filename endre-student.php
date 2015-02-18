@@ -29,8 +29,8 @@
                     $bildenredit=$rad["bildenr"]; 
                     print ("<form method='post' action='endre-student.php' id='endreStudentSkjema' name='endreStudentSkjema'>");
                     print ("Brukernavn <input type='text' value='$brukernavn' name='brukernavn' id='brukernavn' readonly /> <br />");
-                    print ("Fornavn <input type='text' value='$fornavn' name='fornavn' id='fornavn' required /> <br />");
-                    print ("Etternavn <input type='text' value='$etternavn' name='etternavn' id='etternavn' reguired /> <br />");
+                    print ("Fornavn <input type='text' value='$fornavn' name='fornavn' id='fornavn' required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()" /> <br />");
+                    print ("Etternavn <input type='text' value='$etternavn' name='etternavn' id='etternavn' reguired onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()" /> <br />");
                     print ("Klassekode "); 
                     require_once('listeboks-klassekode.php');
                     print ("<br/>");
