@@ -6,7 +6,7 @@
 
 		$input = filter_var($_POST['cc'], FILTER_SANITIZE_STRING);//$_POST['cc'];
 		$db = new DatabaseConnector();
-		$students = new studentsByClass($input, $db->getConnection());
+		$students = new studentsByClass($input, $db->getDBLink());
 
 		echo json_encode($students->result);
 	}

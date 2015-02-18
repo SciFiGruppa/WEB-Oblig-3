@@ -18,7 +18,7 @@ require_once 'php/connect.php';
 
 if(isset($_POST["submit"])) {
     $dbConnector = new DatabaseConnector();
-    $dbLink = $dbConnector->getConnection();
+    $dbLink = $dbConnector->getDBLink();
     $imageManager = new ImageManager($dbLink);
 
     if($imageManager->addImage($_POST["fileDescription"])) {

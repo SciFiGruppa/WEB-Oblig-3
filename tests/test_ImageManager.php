@@ -10,7 +10,7 @@ class test_ImageUpload {
 
     public function test_deleteImage($imageNumber) {
         $dbCon = new DatabaseConnector();
-        $imageManager = new ImageManager($dbCon->getConnection());
+        $imageManager = new ImageManager($dbCon->getDBLink());
         $returnedValue = $imageManager->deleteImage($imageNumber);
 
         if($returnedValue === true) {

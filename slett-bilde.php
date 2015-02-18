@@ -14,7 +14,7 @@ require_once 'php/connect.php';
 
 if(isset($_POST["submit"])) {
     $dbCon = new DatabaseConnector();
-    $imageManager = new ImageManager($dbCon->getConnection());
+    $imageManager = new ImageManager($dbCon->getDBLink());
     $returnVal = $imageManager->deleteImage($_POST["bildenr"]);
 
     if($returnVal !== true) {
