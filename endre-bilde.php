@@ -30,7 +30,7 @@
                     print ("Bildenr <input type='text' value='$bildenr' name='bildenr' id='bildenr' readonly /> <br />");
                     print ("Opplastingsdato <input type='text' value='$opplastingsdato' name='opplastingsdato' id='opplastingsdato' readonly /> <br />");
                     print ("Filnavn <input type='text' value='$filnavn' name='filnavn' id='filnavn' readonly /> <br />");
-                    print ("Beskrivelse <input type='text' value='$beskrivelse' name='beskrivelse' id='beskrivelse' required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()" /> <br />");
+                    print ("Beskrivelse <input type='text' value='$beskrivelse' name='beskrivelse' id='beskrivelse' required onFocus='fokus(this)' onBlur='mistetFokus(this)' onMouseOver='musInn(this)' onMouseOut='musUt()' /> <br />");
                     print ("<input type='submit' value='Endre beskrivelse' name='endreBildeKnapp' id='endreBildeKnapp'>");
                     print ("</form>");
                 }
