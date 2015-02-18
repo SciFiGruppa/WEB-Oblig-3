@@ -7,7 +7,7 @@ class DatabaseConnector implements IDBLink {
   private $dbLink = null;
 
   /**
-   * @return mysqli Returns the database link.
+   * @return mysqli Returns the database link!
    */
   public function getDBLink() {
     if($this->isLinkValid($this->dbLink)) {
