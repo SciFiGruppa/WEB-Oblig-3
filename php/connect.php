@@ -14,9 +14,8 @@ class DatabaseConnector implements IDBLink {
       return $this->dbLink;
     }
     else {
-      if(false === $this->dbLink = $this->getNewDBLink()) {
-        die("Error in database login. Have you set the correct info in config.php?");
-      }
+      $this->dbLink = $this->getNewDBLink();
+      return $this->dbLink;
     }
   }
 
@@ -29,7 +28,7 @@ class DatabaseConnector implements IDBLink {
                               Config::$DB_USER_PASSWORD,
                               Config::$DB_DB_NAME);
 
-    return ($this->isLinkValid($newLink) ? $newLink : NULL);
+    return $newLink;
   }
 
   /**
@@ -46,9 +45,7 @@ class DatabaseConnector implements IDBLink {
     return $isValid;
   }
 
-
 }
-
 
 // Lazy "hack" so we dont have to refactor all the .php files.
 $dbconnector = new DatabaseConnector();
