@@ -40,8 +40,10 @@
             $fornavn=$_POST ["fornavn"];
             $etternavn=$_POST ["etternavn"];  
             $klassekode=$_POST ["klassekode"];  
-            $bildenr=$_POST ["bildenr"];    
-            if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
+            $bildenr=$_POST ["bildenr"];
+              
+           
+            if (!$brukernavn || !$fornavn || !$etternavn)
                 {
                     print ("Alle felt må fylles ut");  
                 }
@@ -54,6 +56,11 @@
                         {
                             print ("Studenten er registrert fra før");
                         }
+                    elseif ($bildenr==="-1") {
+                         $sqlSetning="INSERT INTO student (brukernavn,fornavn,etternavn,klassekode) VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
+                           mysqli_query($db,$sqlSetning) or die ("ikke mulig å registrere data i databasen");
+                           print ("Følgende student er nå registrert: $brukernavn $fornavn $etternavn $klassekode"); 
+                    }
                     else
                         {
                            $sqlSetning="INSERT INTO student (brukernavn,fornavn,etternavn,klassekode, bildenr) VALUES('$brukernavn','$fornavn','$etternavn','$klassekode', '$bildenr');";
