@@ -26,7 +26,7 @@
                     $klassenavn=$rad["klassenavn"];    
                     print ("<form method='post' action='endre-klasse.php' id='endreKlasseSkjema' name='endreKlasseSkjema'>");
                     print ("Klassekode <input type='text' value='$klassekode' name='klassekode' id='klassekode' readonly /> <br />");
-                    print ("Klassenavn <input type='text' value='$klassenavn' name='klassenavn' id='klassenavn' required onFocus="fokus(this)" onBlur="mistetFokus(this)" onMouseOver="musInn(this)" onMouseOut="musUt()" /> <br />");
+                    print ("Klassenavn <input type='text' value='$klassenavn' name='klassenavn' id='klassenavn' required onFocus='fokus(this)' onBlur='mistetFokus(this)' onMouseOver='musInn(this) onMouseOut='musUt()' /> <br />");
                     print ("<input type='submit' value='Endre klasse' name='endreKlasseKnapp' id='endreKlasseKnapp'>");
                     print ("</form>");
                 }
