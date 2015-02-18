@@ -14,9 +14,7 @@ class DatabaseConnector implements IDBLink {
       return $this->dbLink;
     }
     else {
-      $this->dbLink = $this->getNewDBLink();
-
-      if(false === $this->isLinkValid($this->dbLink)) {
+      if(false === $this->dbLink = $this->getNewDBLink()) {
         die("Error in database login. Have you set the correct info in config.php?");
       }
     }
