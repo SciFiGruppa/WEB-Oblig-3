@@ -15,6 +15,11 @@
             $sqlSetning="DELETE FROM student WHERE brukernavn='$brukernavn';";
             mysqli_query($db,$sqlSetning) or die ("ikke mulig å slette data i databasen");  /* SQL-setning sendt til database-serveren */
             print ("Følgende student er nå slettet: $brukernavn $fornavn $etternavn $klassekode <br />");
+            print ("<script type='text/javascript'>
+                        window.setTimeout(function () {
+                            window.location.href = window.location.href;
+                        }, 500);
+                    </script>");
         }
     require_once("footer.html");
 ?> 
