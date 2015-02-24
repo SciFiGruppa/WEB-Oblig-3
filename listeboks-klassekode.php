@@ -3,7 +3,7 @@
     $sqlSetning="SELECT * FROM klasse ORDER BY klassekode;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen"); 
     $antallRader=mysqli_num_rows($sqlResultat); 
-    print("<select onblur='domfn.emptyList(\"student-list-ol\", \"selected-class\")' onchange='sitefn.doAjax(this.value, \"student-list-ol\", \"selected-class\", this.value)' name='klassekode' id='klassekode'>"); 
+    print("<select onblur='domfn.emptyList(\"student-list-ol\", \"selected-class\")' onfocus='sitefn.doAjax(this.value, \"student-list-ol\", \"selected-class\", this.value)' onchange='sitefn.doAjax(this.value, \"student-list-ol\", \"selected-class\", this.value)' name='klassekode' id='klassekode'>"); 
     for ($r=1;$r<=$antallRader;$r++)
         {
             $rad=mysqli_fetch_array($sqlResultat); 
