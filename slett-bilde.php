@@ -21,6 +21,11 @@ if(isset($_POST["submit"])) {
         echo $returnVal->getMessage();
     } else {
         echo 'Deleting successfull!';
+        print ("<script type='text/javascript'>
+                    window.setTimeout(function () {
+                        window.location.href = window.location.href;
+                    }, 500);
+                </script>");
     }
 }
 ?>
