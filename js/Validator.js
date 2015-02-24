@@ -1,42 +1,39 @@
-// when BUTTON is clicked
-// find all <input> elements of type text.
-// check that they are not null
-// if they are null set input element's innerhtml til rød bakgrunn eler noe sånt
-// if they are non-null, set background to green.
+// ---------- PROCEDURAL START ----------
+// Getting the form elements
+var forms = document.body.getElementsByTagName("form");
+
+// Creating
+forms[0].
 
 
-// Make array containing the ID's of <input type="text"> in the HTML object
-var validator = {
-    dummyVar: "dummytext",
-    testVar: "testtext",
+// ---------- PROCEDURAL END ----------
 
-    getInputElements: function() {
-        // Getting NodeList with HTMLInputObjects
-        var nodeListInputs = document.body.getElementsByTagName("input"); // get all <input> elements
 
-        // Putting only the <input type="text"> elements in an array.
-        var inputsArray = [];
-        for(var i = 0; i < nodeListInputs.length; i++) {
-            if(nodeListInputs[i].type === "text") {
-                inputsArray[i] = nodeListInputs[i];
-            }
-        }
-
-        return inputsArray;
-    },
-
-    getSubmitButton: function() {
-        var nodeListSubmit = document.body.getElementsByTagName("input");
-
-        // Try to find the submit button
-
-    }
-
+/* FORM Object */
+var form = function(formID, formInputElements, formSubmitButton) {
+    var id = formID;
+    var inputElements = formInputElements;
+    var submitButton = formSubmitButton
 };
 
-var inputs = validator.getInputElements();
+/**
+ * Function for validating <input type="text"> elements.
+ * @param element The input element to be validated.
+ * @return returns true if the element is valid, false otherwise.
+ */
+function isInputValid(element) {
+    if(element.value === "" || element.value === " " || element.value === null) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
-alert(inputs[0]);
-
-
-
+/**
+ * Sets the background color of an element
+ * @param element
+ * @param color
+ */
+function setElementBgColor(element, color) {
+    element.style.backgroundColor = color;
+}
