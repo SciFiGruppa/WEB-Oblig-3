@@ -57,7 +57,7 @@ WHERE klassekode='$klassekode';";
                     $filnavn= $rad ["filnavn"];
                     $opplastingsdato= $rad ["opplastingsdato"];
                     $beskrivelse= $rad ["beskrivelse"]; 
-                    print ("<tr><td>$fornavn</td><td>$etternavn</td><td> <a class='thumbnail' href='#thumb'> <img src='https://home.hbv.no/phptemp/$filnavn' alt='HTML5 Icon' style='width:64px;height:64px'> <span><img src='img/$filnavn'>$beskrivelse</span></a> </td>  </tr>");
+                    print ("<tr><td>$fornavn</td><td>$etternavn</td><td> <a class='thumbnail' href='#thumb'> <img src='https://home.hbv.no/phptemp/$filnavn' alt='HTML5 Icon' style='width:64px;height:64px'> <span><img src='https://home.hbv.no/phptemp/$filnavn'>$beskrivelse</span></a> </td>  </tr>");
                 }
         }
     }
