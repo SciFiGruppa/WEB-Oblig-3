@@ -148,7 +148,7 @@ class ImageManager {
 
             // Naming and moving the image to it's final location.
             // Name format: '54dca6a5bb73d.jpeg'
-            $newFileName = uniqid() . "." . substr($mimeType, 6);
+            $newFileName = Config::$UPLOAD_IMAGE_PREFIX . uniqid() . "." . substr($mimeType, 6);
             $isMoveSuccessful = move_uploaded_file($filePath, Config::$UPLOAD_PATH . $newFileName);
 
             if(! $isMoveSuccessful) {
