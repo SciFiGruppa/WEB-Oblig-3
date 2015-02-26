@@ -138,13 +138,15 @@ class ImageManager {
                 throw new RuntimeException("Upload failed: Filesize exceeded!");
             }
 
-            // Checking MIME type
+            // Checking MIME type (if the school server had enabled finfo...)
+            /*
             $filePath = $_FILES["fileToUpload"]["tmp_name"];
             $finfo = new finfo(FILEINFO_MIME_TYPE);
             $mimeType = $finfo->file($filePath); // Structure: "image/jpeg"
             if(! array_search($mimeType, Config::$UPLOAD_VALID_MIME_TYPES)) {
                 throw new RuntimeException("Update failed: Invalid file type!");
             }
+            */
 
             // Naming and moving the image to it's final location.
             // Name format: '54dca6a5bb73d.jpeg'
