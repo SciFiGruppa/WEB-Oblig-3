@@ -16,7 +16,7 @@
             $opplastingsdato=$rad["opplastingsdato"];    
             $filnavn=$rad["filnavn"];  
             $beskrivelse=$rad["beskrivelse"]; 
-            print ("<tr> <td> $bildenr </td> <td> $opplastingsdato </td> <td> <a class='thumbnail' href='#thumb'> $filnavn <span><img src='img/$filnavn'>$beskrivelse</span></a> </td> <td> $beskrivelse </td> </tr>"); 
+            print ("<tr> <td> $bildenr </td> <td> $opplastingsdato </td> <td> <a class='thumbnail' href='#thumb'> $filnavn <span><img src='https://home.hbv.no/phptemp/$filnavn'>$beskrivelse</span></a> </td> <td> $beskrivelse </td> </tr>"); 
         }
     print ("</table>");  
     require_once("footer.html");
