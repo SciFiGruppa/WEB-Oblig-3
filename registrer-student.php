@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
   require_once("top.html");
-  require_once("php/config.php");
+  require_once("php/constants.php");
 ?> 
 <script type="text/javascript" src="js/ajax_studentsByClass.js"></script>
 <div class="float-left" id="reg-student">

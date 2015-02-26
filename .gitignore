@@ -1,5 +1,2 @@
-# Ignore configuration file
-php/config.php
-
 # Ignore IntelliJ/PHPStorm IDE folder
 .idea

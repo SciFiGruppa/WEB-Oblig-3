@@ -1,6 +1,6 @@
 <?php 
     require_once("top.html");
-    require_once("php/config.php");
+    require_once("php/constants.php");
 ?> 
 <h3>Slett klasse</h3>
 <form method="post" action="slett-klasse.php" id="slettKlasseSkjema" name="slettKlasseSkjema" cleaned="return bekreft()">

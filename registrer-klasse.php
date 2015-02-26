@@ -1,7 +1,6 @@
 <?php  
     require_once("top.html");
     require_once("php/connect.php");
-    require_once("php/connect.php");
 ?> 
 
 <h3>Registrer Klasse </h3>

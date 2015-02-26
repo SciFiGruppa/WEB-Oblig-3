@@ -1,6 +1,6 @@
 <?php
     require_once("top.html");
-    require_once("php/config.php");
+    require_once("php/constants.php");
 ?> 
 <h3>Endre Klasse</h3>
 <form method="post" action="endre-klasse.php" id="finnKlasseSkjema" name="finnKlasseSkjema">

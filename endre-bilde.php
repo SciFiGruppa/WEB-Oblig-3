@@ -1,6 +1,6 @@
 <?php
     require_once("top.html");
-    require_once("php/config.php");
+    require_once("php/constants.php");
 ?> 
 <h3>Endre bilde</h3>
 <form method="post" action="endre-bilde.php" id="finnBildeSkjema" name="finnBildeSkjema">

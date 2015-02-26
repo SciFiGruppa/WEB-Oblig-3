@@ -1,7 +1,7 @@
 <?php  
     require_once("top.html");
     require_once("php/connect.php");
-    require_once("php/config.php");
+    require_once("php/constants.php");
     $sqlSetning="SELECT * FROM klasse ORDER BY klassekode;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  
     $antallRader=mysqli_num_rows($sqlResultat); 

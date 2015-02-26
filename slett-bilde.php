@@ -9,7 +9,7 @@
 
 <?php
 require_once 'php/ImageManager.php';
-require_once("php/config.php");
+require_once("php/constants.php");
 require_once 'php/connect.php';
 
 if(isset($_POST["submit"])) {
