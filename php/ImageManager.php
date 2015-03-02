@@ -1,12 +1,6 @@
 <?php
 /**
  * Class for managing images.
- * Features:
- * - Upload validated image to server and register it in database.
- * - Returns an array of all registered images.
- * - Method for changing the description of an image.
- * - Delete a picture from the database and server
- * - Fetch an array of images based on class id
  */
 
 class ImageManager {
@@ -139,22 +133,28 @@ class ImageManager {
             }
 
             // Checking MIME type
-            $filePath = $_FILES["fileToUpload"]["tmp_name"];
+            $tmpFilePath = $_FILES["fileToUpload"]["tmp_name"];
             // FINFO IS NOT ENABLED ON SCHOOL SERVER (HURR DERP DURR)
             //$finfo = new finfo(FILEINFO_MIME_TYPE);
-            //$mimeType = $finfo->file($filePath); // Structure: "image/jpeg"
-            $imgCheck = getimagesize($filePath);
+            //$mimeType = $finfo->file($tmpFilePath); // Structure: "image/jpeg"
+            $imgCheck = getimagesize($tmpFilePath);
             $mimeType = $imgCheck["mime"]; // Structure: "image/jpeg"
 
-            if(! array_search($mimeType, Config::$UPLOAD_VALID_MIME_TYPES)) {
-                throw new RuntimeException("Update failed: Invalid file type!");
+            if(false === array_search($mimeType, Config::$UPLOAD_VALID_MIME_TYPES)) {
+                throw new RuntimeException("Update failed: Invalid file type! ($mimeType) ");
             }
 
 
             // Naming and moving the image to it's final location.
             // Name format: '54dca6a5bb73d.jpeg'
             $newFileName = Config::$UPLOAD_IMAGE_PREFIX . uniqid() . "." . substr($mimeType, 6);
-            $isMoveSuccessful = move_uploaded_file($filePath, Config::$UPLOAD_PATH . $newFileName);
+            $uploadFilePath = Config::$UPLOAD_PATH . Config::$UPLOAD_IMAGE_PREFIX . "img_upload\\";
+            // Making sure the upload path exists
+            if(false === file_exists($uploadFilePath)) {
+                mkdir($uploadFilePath, 0777);
+            }
+
+            $isMoveSuccessful = move_uploaded_file($tmpFilePath, $uploadFilePath . $newFileName);
 
             if(! $isMoveSuccessful) {
                 throw new RuntimeException("Upload failed: Moving file to permanent storage failed!");
