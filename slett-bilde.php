@@ -2,9 +2,14 @@
 
 <h3>Slett bilde</h3>
 
-<form method="POST" action="">
+<form method="POST" action="" onsubmit="return bekreft()">
     Velg bilde <?php require_once 'listeboks-bilde.php' ?>
-    <input type="submit" name="submit" id="submit" value="Slett">
+    <input type="submit" name="submit" id="submit" value="Slett" >
+    <script>
+        function bekreft() {
+            return confirm("Er du sikker?");
+        }
+    </script>
 </form>
 
 <?php

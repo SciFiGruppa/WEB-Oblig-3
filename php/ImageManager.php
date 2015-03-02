@@ -37,7 +37,7 @@ class ImageManager {
 
 
             // Delete the image from the server
-            $filePath = Config::$UPLOAD_PATH . $imageName;
+            $filePath = Config::$UPLOAD_PATH . Config::$UPLOAD_IMAGE_PREFIX . "img_upload\\" . $imageName;
             if(file_exists($filePath)) {
                 unlink($filePath);
             } else {
