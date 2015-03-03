@@ -148,7 +148,7 @@ class ImageManager {
             // Naming and moving the image to it's final location.
             // Name format: '54dca6a5bb73d.jpeg'
             $newFileName = Config::$UPLOAD_IMAGE_PREFIX . uniqid() . "." . substr($mimeType, 6);
-            $uploadFilePath = Config::$UPLOAD_PATH . Config::$UPLOAD_IMAGE_PREFIX . "img_upload\\";
+            $uploadFilePath = Config::$UPLOAD_PATH . Config::$UPLOAD_IMAGE_PREFIX . "\\";
             // Making sure the upload path exists
             if(false === file_exists($uploadFilePath)) {
                 mkdir($uploadFilePath, 0777);

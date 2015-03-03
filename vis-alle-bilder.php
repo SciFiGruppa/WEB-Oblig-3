@@ -6,7 +6,7 @@
     $sqlSetning="SELECT * FROM bilde ORDER BY bildenr;";
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");  
     $antallRader=mysqli_num_rows($sqlResultat);
-    $srcPath = "https://home.hbv.no/phptemp/" . Config::$UPLOAD_IMAGE_PREFIX . "img_upload";
+    $srcPath = "https://home.hbv.no/phptemp/" . Config::$UPLOAD_IMAGE_PREFIX;
     print ("<h3>Registerte bilder</h3>");   
     print ("<table border=1>");  
     print ("<tr><th align=left>Bildenr</th> <th align=left>opplastingsdato</th> <th align=left>filnavn</th> <th align=left>beskrivelse</th></tr>"); 
