@@ -36,7 +36,7 @@ LEFT JOIN bilde ON bilde.bildenr=student.bildenr
 WHERE klassekode='$klassekode';";
     $sqlResultat=mysqli_query($db,$sqlSetning);
     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");
-    $antallRader=mysqli_num_rows($sqlResultat);     
+    $antallRader=mysqli_num_rows($sqlResultat);
     if ($antallRader==0)
         {
             print ("Finner ikke noen studenter registrert i klassen $klassekode");
@@ -56,8 +56,9 @@ WHERE klassekode='$klassekode';";
                     $bildenr= $rad ["bildenr"]; 
                     $filnavn= $rad ["filnavn"];
                     $opplastingsdato= $rad ["opplastingsdato"];
-                    $beskrivelse= $rad ["beskrivelse"]; 
-                    print ("<tr><td>$fornavn</td><td>$etternavn</td><td> <a class='thumbnail' href='#thumb'> <img src='https://home.hbv.no/phptemp/$filnavn' alt='HTML5 Icon' style='width:64px;height:64px'> <span><img src='https://home.hbv.no/phptemp/$filnavn'>$beskrivelse</span></a> </td>  </tr>");
+                    $beskrivelse= $rad ["beskrivelse"];
+                    $httpPath = "https://home.hbv.no/phptemp/" . Config::$UPLOAD_IMAGE_PREFIX . "/" . $filnavn;
+                    print ("<tr><td>$fornavn</td><td>$etternavn</td><td> <a class='thumbnail' href='#thumb'> <img src='$httpPath' alt='HTML5 Icon' style='width:64px;height:64px'> <span><img src='https://home.hbv.no/phptemp/$filnavn'>$beskrivelse</span></a> </td>  </tr>");
                 }
         }
     }
