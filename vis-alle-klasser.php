@@ -58,7 +58,7 @@ WHERE klassekode='$klassekode';";
                     $opplastingsdato= $rad ["opplastingsdato"];
                     $beskrivelse= $rad ["beskrivelse"];
                     $httpPath = "https://home.hbv.no/phptemp/" . Config::$UPLOAD_IMAGE_PREFIX . "/" . $filnavn;
-                    print ("<tr><td>$fornavn</td><td>$etternavn</td><td> <a class='thumbnail' href='#thumb'> <img src='$httpPath' alt='HTML5 Icon' style='width:64px;height:64px'> <span><img src='https://home.hbv.no/phptemp/$httpPath'>$beskrivelse</span></a> </td>  </tr>");
+                    print ("<tr><td>$fornavn</td><td>$etternavn</td><td> <a class='thumbnail' href='#thumb'> <img src='$httpPath' alt='HTML5 Icon' style='width:64px;height:64px'> <span><img src='$httpPath'>$beskrivelse</span></a> </td>  </tr>");
                 }
         }
     }
